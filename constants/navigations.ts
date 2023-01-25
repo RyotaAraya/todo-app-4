@@ -1,4 +1,4 @@
-export const BASE_PATH = '/todos'
+export const BASE_PATH = '/todo'
 
 export const NAVIGATION_LIST = {
     TOP: `${BASE_PATH}/`,
