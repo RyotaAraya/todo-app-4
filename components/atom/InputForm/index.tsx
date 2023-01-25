@@ -1,8 +1,9 @@
 type Props = {
     value: string
-    placeholder: string
-    handleChange: (e: any) => void
+    disabled: boolean
+    placeholder?: string
+    onChange?: (e: any) => void
 }
-export const InputForm = ({ value, placeholder, handleChange }: Props) => {
-    return <input value={value} placeholder={placeholder} onChange={(e) => handleChange(e)} />
+export const InputForm = ({ value, disabled = true, placeholder, onChange }: Props) => {
+    return <input value={value} disabled={disabled} placeholder={placeholder} onChange={onChange} />
 }

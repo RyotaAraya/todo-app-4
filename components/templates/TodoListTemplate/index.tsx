@@ -2,7 +2,7 @@
 import { useTodoContext } from '../../../contexts/TodoContext'
 import { TodoList } from '../../organisms/TodoList'
 import { useTodoTemplate } from './useTodoListTemplate'
-import { InputForm } from "../../atom/InputForm";
+import { InputForm } from '../../atom/InputForm'
 
 export const TodoListTemplate = () => {
     const { originTodoList, handleDeleteTodo } = useTodoContext()
@@ -10,7 +10,12 @@ export const TodoListTemplate = () => {
     return (
         <>
             <h1>Todos</h1>
-            <InputForm value={searchKeyword} placeholder="searchKeyword" handleChange={handleChangeSearchKeyword} />
+            <InputForm
+                value={searchKeyword}
+                disabled={false}
+                placeholder="searchKeyword"
+                onChange={handleChangeSearchKeyword}
+            />
             <div>
                 <TodoList todoList={showTodoList} handleDeleteTodo={handleDeleteTodo} />
             </div>
