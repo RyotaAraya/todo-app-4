@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { FC, ReactNode, useContext, createContext } from 'react'
 import { Todo } from '../types'
 import { useTodo } from '../hooks/useTodo'
@@ -8,12 +8,13 @@ type Props = {
 }
 interface ContextInterface {
     originTodoList: Todo[]
+    handleDeleteTodo: (id: number) => void
 }
 const TodoContext = createContext({} as ContextInterface)
 
 export const TodoProvider: FC<Props> = ({ children }) => {
-    const { originTodoList } = useTodo()
-    return <TodoContext.Provider value={{ originTodoList }}>{children}</TodoContext.Provider>
+    const { originTodoList, handleDeleteTodo } = useTodo()
+    return <TodoContext.Provider value={{ originTodoList, handleDeleteTodo }}>{children}</TodoContext.Provider>
 }
 
 export const useTodoContext = () => useContext(TodoContext)
