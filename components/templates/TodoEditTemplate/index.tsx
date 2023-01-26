@@ -7,10 +7,13 @@ import { useEditTemplate } from './useEditTemplate'
 export const TodoEditTemplate = ({ params }: any) => {
     const { originTodoList, updateTodo } = useTodoContext()
     const todo = originTodoList.find((todo) => String(todo.id) === params?.id)
+    if (todo === undefined || todo === null) {
+        throw new Error(`Expected 'todo' to be defined, but received ${todo}`)
+    }
     const [{ newTitle, newContent }, { handleChangeTitle, handleChangeContent, handleUpdateTodo }] = useEditTemplate({
-        originTodoList,
         updateTodo,
         params,
+        todo,
     })
     return (
         <>

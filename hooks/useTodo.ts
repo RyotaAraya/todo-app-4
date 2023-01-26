@@ -5,6 +5,21 @@ export const useTodo = () => {
     const [originTodoList, setOriginTodoList] = useState(INIT_TODO_LIST)
     const [uniqueId, setUniqueId] = useState(INIT_UNIQUE_ID)
 
+    const createTodo = (title: string, content: string) => {
+        const newUniqueId = uniqueId + 1
+        setUniqueId(newUniqueId)
+
+        const newTodoList = [
+            ...originTodoList,
+            {
+                id: newUniqueId,
+                title: title,
+                content: content,
+            },
+        ]
+        setOriginTodoList(newTodoList)
+    }
+
     const updateTodo = (id: number, title: string, content: string) => {
         const updatedTodo = originTodoList.map((todo) => {
             if (todo.id === id) {
@@ -26,6 +41,7 @@ export const useTodo = () => {
 
     return {
         originTodoList,
+        createTodo,
         updateTodo,
         handleDeleteTodo,
     }

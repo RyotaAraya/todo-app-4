@@ -4,17 +4,16 @@ import { useRouter } from 'next/navigation'
 import { NAVIGATION_PATH } from '../../../constants/navigations'
 
 type Props = {
-    originTodoList: Todo[]
     updateTodo: (id: number, title: string, content: string) => void
     params: any
+    todo: Todo
 }
-export const useEditTemplate = ({ originTodoList, updateTodo, params }: Props) => {
+export const useEditTemplate = ({ updateTodo, params, todo }: Props) => {
     const router = useRouter()
     //params.idがundefinedだった場合はエラーとする
     if (params.id === undefined || params.id === null) {
         throw new Error(`Expected 'todo' to be defined, but received ${params.id}`)
     }
-    let todo = originTodoList[params.id]
     if (todo === undefined || todo === null) router.push(NAVIGATION_PATH.TOP)
     const [newTitle, setNewTitle] = useState(todo.title)
     const [newContent, setNewContent] = useState(todo.content)

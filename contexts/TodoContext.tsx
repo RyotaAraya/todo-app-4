@@ -8,15 +8,18 @@ type Props = {
 }
 interface ContextInterface {
     originTodoList: Todo[]
+    createTodo: (title: string, content: string) => void
     updateTodo: (id: number, title: string, content: string) => void
     handleDeleteTodo: (id: number) => void
 }
 const TodoContext = createContext({} as ContextInterface)
 
 export const TodoProvider: FC<Props> = ({ children }) => {
-    const { originTodoList, updateTodo, handleDeleteTodo } = useTodo()
+    const { originTodoList, createTodo, updateTodo, handleDeleteTodo } = useTodo()
     return (
-        <TodoContext.Provider value={{ originTodoList, updateTodo, handleDeleteTodo }}>{children}</TodoContext.Provider>
+        <TodoContext.Provider value={{ originTodoList, createTodo, updateTodo, handleDeleteTodo }}>
+            {children}
+        </TodoContext.Provider>
     )
 }
 
