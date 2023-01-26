@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+やったこと
+
+TODOリスト作成
+    Next.js 13
+        12から変更になった部分の学習
+            pageディレクトリではなくappディレクトリ配下にpage作成
+            パスパラメータの取得方法変更
+            SC, CCが追加
+    typescript
+    Atomicデザイン
+
+
 ## Getting Started
 
 First, run the development server:
