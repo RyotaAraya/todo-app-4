@@ -3,14 +3,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 やったこと
 
-TODOリスト作成
-    Next.js 13
-        12から変更になった部分の学習
-            pageディレクトリではなくappディレクトリ配下にpage作成
-            パスパラメータの取得方法変更
-            SC, CCが追加
-    typescript
-    Atomicデザイン
+## TODOリスト作成
+- Next.js 13
+    - 12から変更になった部分の学習
+    - pageディレクトリではなくappディレクトリ配下にpage作成
+    - パスパラメータの取得方法変更
+    - SC, CCが追加
+- typescript
+- Atomicデザイン
 
 
 ## Getting Started
