@@ -12,3 +12,7 @@ export type Todo = {
 }
 
 export type Todos = Todo[]
+
+export type Params = {
+    params: { slug: string }
+}

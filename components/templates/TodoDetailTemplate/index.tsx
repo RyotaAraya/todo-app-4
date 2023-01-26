@@ -1,11 +1,10 @@
 'use client'
 import { useTodoContext } from '../../../contexts/TodoContext'
-import { useRouter } from 'next/navigation'
 import { InputForm } from '../../atom/InputForm'
 import { TextArea } from '../../atom/TextArea'
 
 export const TodoDetailTemplate = ({ params }: any) => {
-    const { originTodoList, handleDeleteTodo } = useTodoContext()
+    const { originTodoList } = useTodoContext()
     const todo = originTodoList.find((todo) => String(todo.id) === params?.id)
     return (
         <>

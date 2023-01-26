@@ -1,5 +1,9 @@
 import { TodoDetailTemplate } from '../../../../components/templates/TodoDetailTemplate'
-const Page = ({ params, searchParams }: { params: { slug: string }; searchParams: { id: string } }) => {
+
+type Prams = {
+    params: { slug: string }
+}
+const Page = ({ params }: Prams) => {
     return <TodoDetailTemplate params={params} />
 }
 
